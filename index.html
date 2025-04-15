@@ -27,11 +27,30 @@
       content="Успейте получить 1 ТБ трафика — акция Tele2 для новых абонентов"
     />
 
-    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/public/favicon-96x96.png"
+      sizes="96x96"
+    />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/public/favicon.svg"
+    />
+    <link
+      rel="shortcut icon"
+      href="https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/public/favicon.ico"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/public/apple-touch-icon.png"
+    />
+    <link
+      rel="manifest"
+      href="https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/public/site.webmanifest"
+    />
 
     <link rel="stylesheet" href="src/styles/index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -114,7 +133,7 @@
           class="location__icon"
           loading="lazy"
         />
-        <p class="location__name" id="selected-city">Санкт Петербург</p>
+        <p class="location__name" id="selected-city"></p>
       </section>
     </header>
     <main class="main">
@@ -129,6 +148,88 @@
           </p>
           <button class="button button__accept">Принять участие</button>
         </section>
+        <section
+          id="promo-modal"
+          class="promo-modal__overlay"
+          role="dialog"
+          aria-modal="true"
+          style="display: none"
+        >
+          <div class="promo-modal__content">
+            <button class="promo-modal__close" onclick="closePromoModal()">
+              ×
+            </button>
+
+            <section class="phone__container">
+              <label class="phone__label" for="phoneInput"
+                >Номер телефона</label
+              >
+              <input
+                id="phoneInput"
+                class="phone__field"
+                type="tel"
+                placeholder="+7 (123) 456 78 90"
+                required
+                value="+7"
+              />
+            </section>
+
+            <p
+              id="successMessage"
+              class="mobile__success-message"
+              style="
+                display: none;
+                font-size: 13px;
+                color: #07cb5c;
+                position: relative;
+                bottom: 16px;
+              "
+            >
+              <img
+                src="src/assets/icons/success.svg"
+                width="12px"
+                height="12px"
+                alt="Успешно!"
+                loading="lazy"
+              />
+              Промокод выслан на ваш номер
+            </p>
+
+            <div
+              id="errorMessage"
+              class="mobile__error-message"
+              style="display: none; position: relative; bottom: 16px"
+            >
+              <div class="error-icon">!</div>
+              <p style="font-size: 13px; color: #ff4d6c">
+                Промокод уже был выслан на этот номер
+              </p>
+            </div>
+
+            <section class="checkbox__container">
+              <label
+                class="checkbox__label"
+                for="consentCheckbox"
+                style="font-size: 18px"
+              >
+                <input type="checkbox" id="consentCheckbox" />
+                <span class="checkbox-svg">
+                  <svg viewBox="0 0 24 24" class="checkbox-icon">
+                    <polyline points="4 12 10 18 20 6" />
+                  </svg>
+                </span>
+                Даю согласие на обработку персональных данных. Условия
+                соглашения.
+              </label>
+              <div class="button__container">
+                <button class="button promo__button" id="sendCodeBtn">
+                  Выслать промокод
+                </button>
+              </div>
+            </section>
+          </div>
+        </section>
+
         <div class="container photo__container"></div>
       </section>
       <section class="section">
@@ -330,7 +431,14 @@
             Готово! Теперь вы получите 1 ТБ на ваш телефон при подключении
             тарифа «Мой онлайн+».
           </p>
-          <button class="button plan__button">Оформить тариф</button>
+          <a
+            href="https://rostov.tele2.ru"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="button plan__button"
+          >
+            Оформить тариф
+          </a>
         </section>
         <div class="image_container">
           <img
@@ -340,6 +448,21 @@
           />
         </div>
       </section>
+      <section class="github-users">
+        <h2 class="heading heading__medium">Пользователи GitHub</h2>
+        <div class="user-slider" id="userSlider"></div>
+        <div class="pagination" id="pagination"></div>
+      </section>
+
+      <div id="userModal" class="user-modal" style="display: none">
+        <div class="user-modal__content">
+          <button onclick="closeUserModal()" class="user-modal__close">
+            ×
+          </button>
+          <h3 id="modalUsername"></h3>
+          <p id="modalLogin"></p>
+        </div>
+      </div>
     </main>
     <footer class="footer">
       <section class="upper__footer">
@@ -369,6 +492,7 @@
         />
         <span class="copyright">© Tele2 Россия, 2021</span>
       </section>
+      <button id="scrollTopBtn" class="scroll-top-button">↑ Наверх</button>
     </footer>
     <script src="src/main.js"></script>
   </body>
