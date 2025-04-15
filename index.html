@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Подключите тариф «Мой Онлайн+» от Tele2 и получите 1 ТБ интернета в подарок. Только для новых абонентов, акция до 20 сентября."
+    />
+    <meta
+      name="keywords"
+      content="Tele2, Мой Онлайн+, 1 ТБ, подарок, акция, интернет, мобильный тариф"
+    />
+    <meta name="author" content="Tele2 Россия" />
+    <meta property="og:title" content="1 ТБ в подарок новым абонентам Tele2" />
+    <meta
+      property="og:description"
+      content="Только до 20 сентября — получите 1 ТБ интернета при подключении тарифа «Мой Онлайн+». Успейте участвовать!"
+    />
+    <meta property="og:url" content="https://tele2.ru/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Tele2 Россия" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="1 ТБ в подарок новым абонентам Tele2" />
+    <meta
+      name="twitter:description"
+      content="Успейте получить 1 ТБ трафика — акция Tele2 для новых абонентов"
+    />
+
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="stylesheet" href="src/styles/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>TELE2</title>
+  </head>
+  <body>
+    <section
+      class="city-confirm__overlay"
+      id="city-confirm"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="city-confirm__title"
+    >
+      <div class="arrow"></div>
+      <div class="city-confirm__modal">
+        <p class="city-confirm__text">Ваш регион Санкт Петербург?</p>
+        <footer class="city-confirm__footer">
+          <button
+            class="city-confirm__button city-confirm__button--yes"
+            onclick="confirmCity(true)"
+          >
+            Да, верно
+          </button>
+          <button
+            class="city-confirm__button city-confirm__button--no"
+            onclick="showCitySelector()"
+          >
+            Изменить регион
+          </button>
+        </footer>
+      </div>
+    </section>
+    <section
+      class="city-selector__overlay"
+      id="city-selector"
+      style="display: none"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="city-selector__modal">
+        <header class="city-selector__header">
+          <h2>Выберите город</h2>
+        </header>
+        <ul class="city-selector__list">
+          <li onclick="selectCity('Воронеж')">Воронеж</li>
+          <li onclick="selectCity('Новосибирск')">Новосибирск</li>
+          <li onclick="selectCity('Иркутск')">Иркутск</li>
+          <li onclick="selectCity('Пермь')">Пермь</li>
+          <li onclick="selectCity('Кемерово')">Кемерово</li>
+          <li onclick="selectCity('Санкт Петербург')">Санкт-Петербург</li>
+          <li onclick="selectCity('Красноярск')">Красноярск</li>
+          <li onclick="selectCity('Челябинск')">Челябинск</li>
+          <li onclick="selectCity('Москва')">Москва</li>
+          <li onclick="selectCity('Ростов-на-Дону')">Ростов-на-Дону</li>
+          <li onclick="selectCity('Н. Новгород')">Н. Новгород</li>
+        </ul>
+      </div>
+    </section>
+    <header class="header main__header" id="main-header">
+      <img
+        src="src/assets/logos/tele2.svg"
+        alt="TELE2"
+        class="logo logo__tele2"
+        loading="lazy"
+      />
+      <section
+        class="location location__picker"
+        style="cursor: pointer"
+        id="location-picker"
+      >
+        <img
+          src="src/assets/icons/location.svg"
+          alt="Location"
+          class="location__icon"
+          loading="lazy"
+        />
+        <p class="location__name" id="selected-city">Санкт Петербург</p>
+      </section>
+    </header>
+    <main class="main">
+      <section class="section benefit">
+        <section class="benefit__container">
+          <p class="promotion__dates">Акция продлится с 1 по 20 сентября</p>
+          <span class="heading heading__big"
+            >ЭТО ВАША <strong>ВЫГОДА!</strong></span
+          >
+          <p class="paragraph">
+            Тариф «Мой онлайн+» и 1 ТБ трафика в подарок для новых абонентов
+          </p>
+          <button class="button button__accept">Принять участие</button>
+        </section>
+        <div class="container photo__container"></div>
+      </section>
+      <section class="section">
+        <span class="heading heading__medium"
+          >Один терабайт — много любимых развлечений</span
+        >
+        <p class="paragraph">
+          Подарок получают только новые абоненты при подключении услуг Tele2
+          тарифом «Мой онлайн+». Трафик расходуется в течение года.
+        </p>
+      </section>
+      <div class="advantages">
+        <div class="icon__container">
+          <img
+            src="src/assets/icons/video.svg"
+            alt="500 часов видео"
+            loading="lazy"
+          />
+        </div>
+        <div class="paragraph__container">
+          <p class="paragraph">Около 500 часов видео</p>
+        </div>
+        <div class="icon__container">
+          <img
+            src="src/assets/icons/music.svg"
+            alt="200000 песен"
+            loading="lazy"
+          />
+        </div>
+        <div class="paragraph__container">
+          <p class="paragraph">Примерно 200 000 песен</p>
+        </div>
+        <div class="icon__container">
+          <img
+            src="src/assets/icons/photos.svg"
+            alt="300000 фото"
+            loading="lazy"
+          />
+        </div>
+        <div class="paragraph__container">
+          <p class="paragraph">Порядка 300 000 фото</p>
+        </div>
+      </div>
+      <section class="phone-section">
+        <section>
+          <span class="heading heading__medium tb_number"
+            >Оставьте номер<br />
+            и <strong>1 ТБ — ваш</strong></span
+          >
+          <section class="mobile-steps">
+            <p class="ellipse">1</p>
+            <p class="paragraph steps__paragraph">
+              Ведите свой номер телефона, затем дождитесь смс с промокодом для
+              получения Тб
+            </p>
+            <p class="ellipse">2</p>
+            <p class="paragraph steps__paragraph">
+              Перейдите на сайт Tele2 и активируйте промокод при подключении на
+              тариф «Мой Онлайн+»
+            </p>
+            <p class="ellipse">3</p>
+            <p class="paragraph steps__paragraph">
+              Используйте свой подарочный ТБ от Tele2 в течение всего года
+            </p>
+          </section>
+          <section class="phone__container">
+            <label class="phone__label">Номер телефона</label>
+            <input
+              id="phoneInput"
+              class="phone__field"
+              type="tel"
+              placeholder="+7 (123) 456 78 90"
+              required
+              value="+7"
+            />
+          </section>
+
+          <p
+            id="successMessage"
+            class="mobile__success-message"
+            style="
+              display: none;
+              font-size: 13px;
+              color: #07cb5c;
+              position: relative;
+              bottom: 16px;
+            "
+          >
+            <img
+              src="src/assets/icons/success.svg"
+              width="12px"
+              height="12px"
+              alt="Успешно!"
+              loading="lazy"
+            />
+            Промокод выслан на ваш номер
+          </p>
+
+          <div
+            id="errorMessage"
+            class="mobile__error-message"
+            style="display: none; position: relative; bottom: 16px"
+          >
+            <div class="error-icon">!</div>
+            <p style="font-size: 13px; color: #ff4d6c">
+              Промокод уже был выслан на этот номер
+            </p>
+          </div>
+
+          <section class="checkbox__container">
+            <label class="checkbox__label" style="font-size: 18px">
+              <input type="checkbox" id="consentCheckbox" />
+              <span class="checkbox-svg">
+                <svg viewBox="0 0 24 24" class="checkbox-icon">
+                  <polyline points="4 12 10 18 20 6" />
+                </svg>
+              </span>
+              Даю согласие на обработку персональных данных. Условия соглашения.
+            </label>
+            <div class="button__container">
+              <button class="button promo__button" id="sendCodeBtn">
+                Выслать промокод
+              </button>
+            </div>
+          </section>
+
+          <script>
+            const phoneInput = document.getElementById("phoneInput");
+            const sendButton = document.getElementById("sendCodeBtn");
+            const checkbox = document.getElementById("consentCheckbox");
+            const successMessage = document.getElementById("successMessage");
+            const errorMessage = document.getElementById("errorMessage");
+
+            let sentNumbers = new Set();
+
+            phoneInput.addEventListener("input", () => {
+              if (!phoneInput.value.startsWith("+7")) {
+                phoneInput.value = "+7";
+              }
+            });
+
+            sendButton.addEventListener("click", (e) => {
+              e.preventDefault();
+
+              const phone = phoneInput.value.trim();
+              const phoneRegex = /^\+7\d{10}$/;
+
+              successMessage.style.display = "none";
+              errorMessage.style.display = "none";
+
+              if (!checkbox.checked) {
+                alert("Вы должны согласиться с условиями.");
+                return;
+              }
+
+              if (!phoneRegex.test(phone)) {
+                alert("Введите корректный номер телефона (10 цифр после +7).");
+                return;
+              }
+
+              if (sentNumbers.has(phone)) {
+                successMessage.style.display = "none";
+                errorMessage.style.display = "flex";
+              } else {
+                sentNumbers.add(phone);
+                successMessage.style.display = "block";
+                errorMessage.style.display = "none";
+              }
+            });
+          </script>
+        </section>
+        <section>
+          <section class="desktop-steps">
+            <p class="ellipse">1</p>
+            <p class="paragraph steps__paragraph">
+              Ведите свой номер телефона, затем дождитесь смс с промокодом для
+              получения Тб
+            </p>
+            <p class="ellipse">2</p>
+            <p class="paragraph steps__paragraph">
+              Перейдите на сайт Tele2 и активируйте промокод при подключении на
+              тариф «Мой Онлайн+»
+            </p>
+            <p class="ellipse">3</p>
+            <p class="paragraph steps__paragraph">
+              Используйте свой подарочный ТБ от Tele2 в течение всего года
+            </p>
+          </section>
+        </section>
+      </section>
+
+      <section class="section plan__section">
+        <section class="plan-hint">
+          <span class="heading heading__medium hint-heading"
+            >Заходите на сайт Tele2</span
+          >
+          <p class="paragraph">
+            Перейдите в магазин на страничку активации, введите ваш промокод.
+            Готово! Теперь вы получите 1 ТБ на ваш телефон при подключении
+            тарифа «Мой онлайн+».
+          </p>
+          <button class="button plan__button">Оформить тариф</button>
+        </section>
+        <div class="image_container">
+          <img
+            class="terabyte__image"
+            src="src/assets/images/1tb.png"
+            loading="lazy"
+          />
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <section class="upper__footer">
+        <div class="links">
+          <a class="link__logo" href=""
+            ><img src="src/assets/logos/facebook.svg" loading="lazy"
+          /></a>
+          <a class="link__logo" href=""
+            ><img src="src/assets/logos/twitter.svg" loading="lazy"
+          /></a>
+          <a class="link__logo" href=""
+            ><img src="src/assets/logos/vk.svg" loading="lazy"
+          /></a>
+        </div>
+        <section class="conditions">
+          <span>Полные условия акции</span>
+          <span class="age">16+</span>
+        </section>
+      </section>
+      <section class="lower__footer">
+        <img
+          src="src/assets/logos/tele2.svg"
+          width="79px"
+          height="30px"
+          alt="tele2"
+          loading="lazy"
+        />
+        <span class="copyright">© Tele2 Россия, 2021</span>
+      </section>
+    </footer>
+    <script src="src/main.js"></script>
+  </body>
+</html>
