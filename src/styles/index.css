@@ -151,13 +151,16 @@ body {
 
 .photo__container {
   display: flex;
-  justify-items: center;
-  width: 100%;
-  height: 45vh;
-  overflow: hidden;
+  width: 90%;
+  height: 300px;
+  background-image: url("/src/assets/images/boss2.png");
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow: visible;
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-  margin-bottom: 72px;
+  margin-bottom: 0px;
 }
 
 .hero {
@@ -523,6 +526,19 @@ input:checked + .checkbox-svg .checkbox-icon {
 @media (min-width: 375px) and (max-width: 767px) {
   body {
     font-size: var(--font-size-mobile);
+  }
+  .photo__container {
+    display: flex;
+    width: 90%;
+    height: 300px;
+    background-image: url("/src/assets/images/boss2.png");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: visible;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    margin-bottom: 0px;
   }
 }
 
