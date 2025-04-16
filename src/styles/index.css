@@ -161,6 +161,7 @@ body {
   -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
   margin-bottom: 0px;
+  align-self: center;
 }
 
 .hero {
@@ -355,6 +356,7 @@ input:checked + .checkbox-svg .checkbox-icon {
 .footer {
   display: grid;
   grid-template-rows: 48px 80px;
+  width: 100%;
 }
 
 .upper__footer {
@@ -671,8 +673,8 @@ a {
   }
   .photo__container {
     display: flex;
-    width: 90%;
-    height: 300px;
+    width: 80%;
+    height: 400px;
     background-image: url("https://github.com/echoisonline/ChulakovTest_Tele2/blob/main/src/assets/images/boss2.png?raw=true");
     background-position: center top;
     background-size: cover;
